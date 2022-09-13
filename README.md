@@ -17,7 +17,31 @@ If you face any issues or have any suggestions, please open an issue!
 
 ## Quick start
 
-TODO
+Run the following command to create a project using this blog template:
+
+```bash
+npx create-remix@latest --template josemiguel-alvarez/simple-remix-blog
+```
+
+Once you've created the project you have to install the dependencies:
+
+```bash
+yarn install
+```
+
+and run the `dev` script:
+
+```bash
+yarn dev
+```
+
+Your blog should be now running on localhost:3000. There are some example posts in template that you can remove.
+
+Then you have update the `app/siteMetadata.js` with your own information.
+
+To create a new post you have to add a new markdown or MDX file in `app/routes/posts`. The project supports frontmatter, so you can add the post metadata formatted as YAML at the top of the file. Check the posts in this repository if you need an example.
+
+Finally, include the new post in the `POSTS` constant in the `app/utils/posts.server.ts` file. The post should be available now in your blog.
 
 ## Motivation
 
