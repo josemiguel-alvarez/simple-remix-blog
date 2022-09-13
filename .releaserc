@@ -1,6 +1,7 @@
 {
   "branches": [
-    "main"
+    "main",
+    "release"
   ],
   "plugins": [
     [
