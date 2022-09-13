@@ -1,40 +1,73 @@
-# Welcome to Remix!
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<center>
+<h1>
+  <img alt="Project logo" src="https://user-images.githubusercontent.com/89982193/189909779-fc246b9e-1ff8-46d8-9c57-8c51d1676d77.png">
+</h1>
+</center>
 
-- [Remix Docs](https://remix.run/docs)
+simple-remix-blog is a blog template built using [remix.run](https://remix.run/) and [TailwindCSS](https://tailwindcss.com/). It supports markdown and MDX for the blog posts. You can clone it and start your own blog in a few minutes. Check out the documentation below to get started.
 
-## Deployment
+If you face any issues or have any suggestions, please open an issue!
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+## Demo
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+[simple-remix-blog.vercel.app](https://simple-remix-blog.vercel.app/)
 
-```sh
-npm i -g vercel
-vercel
+## Quick start
+
+Run the following command to create a project using this blog template:
+
+```bash
+npx create-remix@latest --template josemiguel-alvarez/simple-remix-blog
 ```
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+Once you've created the project you have to install the dependencies:
 
-## Development
-
-To run your Remix app locally, make sure your project's local dependencies are installed:
-
-```sh
-npm install
+```bash
+yarn install
 ```
 
-Afterwards, start the Remix development server like so:
+and run the `dev` script:
 
-```sh
-npm run dev
+```bash
+yarn dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+Your blog should be now running on localhost:3000. There are some example posts in template that you can remove.
 
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+Then you have update the `app/siteMetadata.js` with your own information.
+
+To create a new post you have to add a new markdown or MDX file in `app/routes/posts`. The project supports frontmatter, so you can add the post metadata formatted as YAML at the top of the file. Check the posts in this repository if you need an example.
+
+Finally, include the new post in the `POSTS` constant in the `app/utils/posts.server.ts` file. The post should be available now in your blog.
+
+## Motivation
+
+I built this blog template because I wanted to port my own personal site to Remix. I also wanted to contribute back to the community so I decided to build it as a Remix template.
+
+## Features
+
+- Supports markdown and MDX
+- Easily customizable using TailwindCSS
+- Near perfect [page performance](https://pagespeed.web.dev/report?url=https%3A%2F%2Fsimple-remix-blog.vercel.app%2F)
+- Light and dark theme
+- Responsive design
+- Syntax highlighting for code blocks
+- Support for tags
+- SEO friendly
+- About page
+- Cache headers already pre-configured
+
+## Contributing
+
+Feel free to open an issue if you have any suggestions or issues. I'll try to respond as soon as possible. You can also open a PR if you want to contribute to the project.
+
+This project has the All Contributors bot installed, so please open a pull request to add yourself to the contributors list. Check the [All Contributors documentation](https://allcontributors.org/docs/en/bot/usage).
+
+Contributing guide:
+
+1. Fork & clone this project.
+2. Run `yarn install` to install all the dependencies.
+3. Run `yarn dev` to start the development server.
 
 ## Contributors ✨
 
@@ -57,3 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+simple-remix-blog is released under [MIT License](https://github.com/josemiguel-alvarez/simple-remix-blog/blob/main/LICENSE).
