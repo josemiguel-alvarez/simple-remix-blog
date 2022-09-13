@@ -1,0 +1,22 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=300, s-maxage=31556952"
+        }
+      ]
+    },
+    {
+      "source": "/build/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31556952"
+        }
+      ]
+    }
+  ]
+}
