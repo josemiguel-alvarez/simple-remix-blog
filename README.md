@@ -4,9 +4,6 @@
 </h1>
 </center>
 
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fjosemiguel-alvarez%2Fsimple-remix-blog)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjosemiguel-alvarez%2Fsimple-remix-blog)
-[![GitHub stars](https://img.shields.io/github/stars/josemiguel-alvarez/simple-remix-blog)](https://github.com/josemiguel-alvarez/simple-remix-blog/stargazers)
-
 simple-remix-blog is a blog template built using [remix.run](https://remix.run/) and [TailwindCSS](https://tailwindcss.com/). It supports markdown and MDX for the blog posts. You can clone it and start your own blog in a few minutes. Check out the documentation below to get started.
 
 If you face any issues or have any suggestions, please open an issue!
