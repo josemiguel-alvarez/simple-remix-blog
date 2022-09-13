@@ -15,6 +15,10 @@ If you face any issues or have any suggestions, please open an issue!
 
 [simple-remix-blog.vercel.app](https://simple-remix-blog.vercel.app/)
 
+## Quick start
+
+TODO
+
 ## Motivation
 
 I built this blog template because I wanted to port my own personal site to Remix. I also wanted to contribute back to the community so I decided to build it as a Remix template.
@@ -37,6 +41,12 @@ I built this blog template because I wanted to port my own personal site to Remi
 Feel free to open an issue if you have any suggestions or issues. I'll try to respond as soon as possible. You can also open a PR if you want to contribute to the project.
 
 This project has the All Contributors bot installed, so please open a pull request to add yourself to the contributors list. Check the [All Contributors documentation](https://allcontributors.org/docs/en/bot/usage).
+
+Contributing guide:
+
+1. Fork & clone this project.
+2. Run `yarn install` to install all the dependencies.
+3. Run `yarn dev` to start the development server.
 
 ## Contributors ✨
 
