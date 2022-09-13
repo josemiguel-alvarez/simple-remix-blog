@@ -1,4 +1,5 @@
 {
+  "name": "simple-remix-blog",
   "private": true,
   "sideEffects": false,
   "scripts": {
