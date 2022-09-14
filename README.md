@@ -4,6 +4,9 @@
 </h1>
 </center>
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/josemiguel-alvarez/simple-remix-blog)
+[![GitHub license](https://img.shields.io/github/license/josemiguel-alvarez/simple-remix-blog)](https://github.com/josemiguel-alvarez/simple-remix-blog/blob/main/LICENSE)
+
 simple-remix-blog is a blog template built using [remix.run](https://remix.run/) and [TailwindCSS](https://tailwindcss.com/). It supports markdown and MDX for the blog posts. You can clone it and start your own blog in a few minutes. Check out the documentation below to get started.
 
 If you face any issues or have any suggestions, please open an issue!
@@ -54,7 +57,7 @@ yarn dev
 
 Your blog should now be running on localhost:3000. There are some example posts in the template that you can remove when you're ready to start adding your own posts.
 
-Then you have update the `app/siteMetadata.js` with your own information.
+Then you have to update the `app/siteMetadata.js` file with your own information.
 
 To create a new post you have to add a new markdown or MDX file in `app/routes/posts`. The project supports frontmatter, so you can add the post metadata formatted as YAML at the top of the file. Check the posts in this repository if you need an example.
 
