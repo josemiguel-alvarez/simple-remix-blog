@@ -14,15 +14,15 @@ export const Header = () => {
 
   return (
     <header className="flex justify-between items-center max-w-full w-full py-8">
-      <Link className="home text-3xl font-medium no-underline" to="/">
+      <Link className="home text-3xl font-medium no-underline flex-1" to="/">
         {siteMetadata.domain}
       </Link>
 
-      <div className="hidden sm:block">
+      <div className="hidden sm:block flex-1">
         <SocialMedia />
       </div>
 
-      <div className="sm:flex items-center gap-4 hidden">
+      <div className="sm:flex items-center gap-4 hidden flex-1 justify-end">
         <BlogLinks />
       </div>
 
