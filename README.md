@@ -12,6 +12,26 @@ If you face any issues or have any suggestions, please open an issue!
 
 [simple-remix-blog.vercel.app](https://simple-remix-blog.vercel.app/)
 
+<details>
+  <summary>Screenshots</summary>
+  <h1>
+    <img alt="Home" src="https://user-images.githubusercontent.com/89982193/190130973-0291b5bc-99f5-4bb0-be07-2485e3d4913e.png">
+  </h1>
+
+  <h1>
+    <img alt="Post" src="https://user-images.githubusercontent.com/89982193/190131250-831b88d4-9b29-4b3c-a537-f64e277621cd.png">
+  </h1>
+
+  <h1>
+    <img alt="Tags" src="https://user-images.githubusercontent.com/89982193/190131315-f54a9ea2-46f3-4235-abca-a61571272cf8.png">
+  </h1>
+
+  <h1>
+    <img alt="About" src="https://user-images.githubusercontent.com/89982193/190131432-189d5394-aa2b-4dff-922a-184f8f879ac9.png">
+  </h1>
+
+</details>
+
 ## Quick start
 
 Run the following command to create a project using this blog template:
@@ -32,7 +52,7 @@ and run the `dev` script:
 yarn dev
 ```
 
-Your blog should be now running on localhost:3000. There are some example posts in template that you can remove.
+Your blog should now be running on localhost:3000. There are some example posts in the template that you can remove when you're ready to start adding your own posts.
 
 Then you have update the `app/siteMetadata.js` with your own information.
 
