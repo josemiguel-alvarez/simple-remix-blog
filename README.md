@@ -99,7 +99,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="http://www.linkedin.com/in/jmalvarezvano"><img src="https://avatars.githubusercontent.com/u/89982193?v=4?s=100" width="100px;" alt=""/><br /><sub><b>José Miguel Álvarez Vañó</b></sub></a><br /><a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=josemiguel-alvarez" title="Code">💻</a></td>
+      <td align="center"><a href="http://www.linkedin.com/in/jmalvarezvano"><img src="https://avatars.githubusercontent.com/u/89982193?v=4?s=100" width="100px;" alt=""/><br /><sub><b>José Miguel Álvarez Vañó</b></sub></a><br /><a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=josemiguel-alvarez" title="Code">💻</a> <a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=josemiguel-alvarez" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
