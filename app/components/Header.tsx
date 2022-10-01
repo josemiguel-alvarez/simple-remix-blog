@@ -1,7 +1,6 @@
 import Drawer from "@mui/material/Drawer";
 import { Link } from "@remix-run/react";
 import { useState } from "react";
-import { siteMetadata } from "~/siteMetadata";
 import menuIcon from "../assets/menu.webp";
 import { BlogLinks } from "./BlogLinks";
 import { SocialMedia } from "./SocialMedia";
@@ -15,7 +14,7 @@ export const Header = () => {
   return (
     <header className="flex justify-between items-center max-w-full w-full py-8">
       <Link className="home text-3xl font-medium no-underline flex-1" to="/">
-        {siteMetadata.domain}
+        <img alt="Project logo" src="https://user-images.githubusercontent.com/89982193/189909779-fc246b9e-1ff8-46d8-9c57-8c51d1676d77.png" />
       </Link>
 
       <div className="hidden sm:block flex-1">
