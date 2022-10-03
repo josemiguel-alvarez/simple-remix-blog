@@ -7,6 +7,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/josemiguel-alvarez/simple-remix-blog)
 [![GitHub license](https://img.shields.io/github/license/josemiguel-alvarez/simple-remix-blog)](https://github.com/josemiguel-alvarez/simple-remix-blog/blob/main/LICENSE)
 [![Release](https://github.com/josemiguel-alvarez/simple-remix-blog/actions/workflows/release.yml/badge.svg)](https://github.com/josemiguel-alvarez/simple-remix-blog/actions/workflows/release.yml)
+[![Quality Check](https://github.com/josemiguel-alvarez/simple-remix-blog/actions/workflows/analysis.yml/badge.svg)](https://github.com/josemiguel-alvarez/simple-remix-blog/actions/workflows/analysis.yml)
 
 simple-remix-blog is a blog template built using [remix.run](https://remix.run/) and [TailwindCSS](https://tailwindcss.com/). It supports markdown and MDX for the blog posts. You can clone it and start your own blog in a few minutes. Check out the documentation below to get started.
 
