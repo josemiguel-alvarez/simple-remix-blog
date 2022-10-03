@@ -37,6 +37,7 @@ export const links: LinksFunction = () => {
   ];
 };
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 const dynamicLinks: DynamicLinksFunction<typeof import("*.mdx")> = ({
   data,
 }) => {
