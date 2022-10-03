@@ -13,7 +13,7 @@ export const Header = () => {
   const closeDrawer = () => setShouldShowDrawer(false);
 
   return (
-    <header className="flex justify-between items-center max-w-full w-full py-8">
+    <header className="flex justify-between items-center max-w-full w-full py-8 gap-x-12 md:gap-x-0">
       <Link className="home text-3xl font-medium no-underline flex-1" to="/">
         {siteMetadata?.logo ? <img alt="Project logo" src={siteMetadata?.logo} /> : <span>{siteMetadata?.domain}</span>}
       </Link>
