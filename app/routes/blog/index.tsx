@@ -4,6 +4,7 @@ import type { Frontmatter } from "~/utils/posts.server";
 import { getPostsSortedByDate } from "~/utils/posts.server";
 import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
+import { SearchForm } from "~/components/SearchForm";
 
 interface LoaderData {
   page: number;
@@ -27,6 +28,7 @@ export default function Blog() {
   return (
     <>
       <h1>All posts</h1>
+      <SearchForm />
       <PostsList
         posts={posts}
         page={page}
