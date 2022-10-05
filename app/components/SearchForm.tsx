@@ -1,15 +1,13 @@
 import { Input } from "@mui/material";
 import { Dispatch } from "react";
 
-export const SearchForm = ({
-  setQuery,
-  query,
-  isSmall,
-}: {
+interface Props {
   setQuery: Dispatch<string>;
   query: string;
   isSmall: boolean;
-}) => {
+}
+
+export const SearchForm = ({ setQuery, query, isSmall }: Props) => {
   return (
     <div className={`mb-10 ${!isSmall && "w-full text-center"}`}>
       <Input
