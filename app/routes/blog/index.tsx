@@ -5,6 +5,8 @@ import { getPostsSortedByDate } from "~/utils/posts.server";
 import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
 import { SearchForm } from "~/components/SearchForm";
+import { useEffect, useState } from "react";
+import { useSearchQuery } from "~/hooks/useSearchQuery";
 
 interface LoaderData {
   page: number;
@@ -24,13 +26,15 @@ export const loader = async ({ request }: { request: Request }) => {
 export default function Blog() {
   const { page, posts, nextPage, previousPage, totalPages } =
     useLoaderData<LoaderData>();
+  const [query, setQuery] = useState("");
+  const controlledPosts = useSearchQuery(posts, query);
 
   return (
     <>
       <h1>All posts</h1>
-      <SearchForm />
+      <SearchForm setQuery={setQuery} query={query} isSmall={false} />
       <PostsList
-        posts={posts}
+        posts={controlledPosts}
         page={page}
         totalPages={totalPages}
         previousPage={previousPage}
