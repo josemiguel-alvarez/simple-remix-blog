@@ -18,7 +18,7 @@ export const SearchForm = ({
         name="query"
         size={isSmall ? "small" : "medium"}
         classes={{
-          root: `border border-gray-200 dark:bg-white dark:border-slate-900 ${
+          root: `border border-gray-200 dark:border-slate-900 ${
             isSmall ? "md:w-64 w-full" : "sm:w-80 w-full"
           }`,
         }}
