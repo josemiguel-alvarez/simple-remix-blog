@@ -106,6 +106,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center"><a href="http://www.linkedin.com/in/jmalvarezvano"><img src="https://avatars.githubusercontent.com/u/89982193?v=4?s=100" width="100px;" alt="José Miguel Álvarez Vañó"/><br /><sub><b>José Miguel Álvarez Vañó</b></sub></a><br /><a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=josemiguel-alvarez" title="Code">💻</a> <a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=josemiguel-alvarez" title="Documentation">📖</a></td>
       <td align="center"><a href="https://amrendranath.dev/"><img src="https://avatars.githubusercontent.com/u/46886429?v=4?s=100" width="100px;" alt="Amrendra Nath "/><br /><sub><b>Amrendra Nath </b></sub></a><br /><a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=amrendranath" title="Code">💻</a></td>
+      <td align="center"><a href="http://www.elijahtrillionz.com"><img src="https://avatars.githubusercontent.com/u/60356516?v=4?s=100" width="100px;" alt="Elijah Trillionz"/><br /><sub><b>Elijah Trillionz</b></sub></a><br /><a href="https://github.com/josemiguel-alvarez/simple-remix-blog/commits?author=Elijah-trillionz" title="Code">💻</a> <a href="#design-Elijah-trillionz" title="Design">🎨</a></td>
     </tr>
   </tbody>
   <tfoot>
