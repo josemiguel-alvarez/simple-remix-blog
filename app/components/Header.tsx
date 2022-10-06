@@ -1,21 +1,33 @@
 import Drawer from "@mui/material/Drawer";
 import { Link } from "@remix-run/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteMetadata } from "~/siteMetadata";
+import { isDarkMode } from "~/utils/darkMode";
 import menuIcon from "../assets/menu.webp";
 import { BlogLinks } from "./BlogLinks";
 import { SocialMedia } from "./SocialMedia";
 
 export const Header = () => {
   const [shouldShowDrawer, setShouldShowDrawer] = useState(false);
+  const [siteLogo, setSiteLogo] = useState(siteMetadata.logo);
 
   const openDrawer = () => setShouldShowDrawer(true);
   const closeDrawer = () => setShouldShowDrawer(false);
 
+  useEffect(() => {
+    if (isDarkMode() && siteMetadata.logo_dark_mode) {
+      setSiteLogo(siteMetadata.logo_dark_mode);
+    }
+  }, []);
+
   return (
     <header className="flex justify-between items-center max-w-full w-full py-8 gap-x-12 md:gap-x-0">
       <Link className="home text-3xl font-medium no-underline flex-1" to="/">
-        {siteMetadata?.logo ? <img alt="Project logo" src={siteMetadata?.logo} /> : <span>{siteMetadata?.domain}</span>}
+        {siteLogo ? (
+          <img alt="Project logo" src={siteLogo} loading="lazy" />
+        ) : (
+          <span>{siteMetadata.domain}</span>
+        )}
       </Link>
 
       <div className="hidden sm:block flex-1">
