@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, useParams } from "@remix-run/react";
-import type { Frontmatter } from "~/utils/posts.server";
+import { Frontmatter, getFilteredPosts } from "~/utils/posts.server";
 import { getPostsSortedByDate } from "~/utils/posts.server";
 import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
@@ -45,9 +45,15 @@ export const loader = async ({
   request: Request;
 }) => {
   const { tag } = params;
-  const posts = getPostsSortedByDate().filter((post) =>
-    post.tags.includes(tag)
-  );
+  const url = new URL(request.url);
+  const query = url.searchParams.get("q");
+
+  let posts;
+  if (query && query.length >= 3) {
+    posts = getFilteredPosts(query).filter((post) => post.tags.includes(tag));
+  } else {
+    posts = getPostsSortedByDate().filter((post) => post.tags.includes(tag));
+  }
   const data = getPagingData(request, posts);
 
   return json<LoaderData>(data);
@@ -57,17 +63,15 @@ export default function Tag() {
   const { tag } = useParams();
   const { posts, nextPage, previousPage, totalPages, page } =
     useLoaderData<LoaderData>();
-  const [query, setQuery] = useState("");
-  const controlledPosts = useSearchQuery(posts, query);
 
   return (
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>#{tag}</h1>
-        <SearchForm setQuery={setQuery} query={query} isSmall={true} />
+        <SearchForm />
       </div>
       <PostsList
-        posts={controlledPosts}
+        posts={posts}
         page={page}
         totalPages={totalPages}
         previousPage={previousPage}

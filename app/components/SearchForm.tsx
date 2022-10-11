@@ -1,29 +1,33 @@
 import { Input } from "@mui/material";
-import { Dispatch } from "react";
+import { Form, useSubmit } from "@remix-run/react";
+import { FormEvent, useState } from "react";
 
 interface Props {
-  setQuery: Dispatch<string>;
-  query: string;
-  isSmall: boolean;
+  query?: string;
 }
 
-export const SearchForm = ({ setQuery, query, isSmall }: Props) => {
+export const SearchForm = ({ query }: Props) => {
+  const [inputQuery, setInputQuery] = useState("");
+  const submit = useSubmit();
+
+  const handleFormChange = (e: FormEvent<HTMLFormElement>) => {
+    submit(e.currentTarget, { replace: true });
+  };
+
   return (
-    <div className={`mb-10 ${!isSmall && "w-full text-center"}`}>
+    <Form className="mb-10" method="get" onChange={handleFormChange}>
       <Input
-        name="query"
-        size={isSmall ? "small" : "medium"}
+        name="q"
         disableUnderline={true}
         classes={{
-          root: `${isSmall ? "md:w-64 w-full" : "sm:w-80 w-full"}`,
+          root: "md:w-72 w-full",
           input:
-            "border border-gray-400 dark:text-slate-200 dark:border-slate-200 px-5 py-4 border-solid rounded-md block ease-in duration-300 dark:focus:border-blue-400 focus:border-blue-400",
-          inputSizeSmall: "py-2",
+            "border border-gray-400 dark:text-slate-200 dark:border-slate-200 px-5 py-3 border-solid rounded-md block ease-in duration-300 dark:focus:border-blue-400 focus:border-blue-400",
         }}
         placeholder="Search"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => setInputQuery(e.target.value)}
+        value={inputQuery}
       />
-    </div>
+    </Form>
   );
 };

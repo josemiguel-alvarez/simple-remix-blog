@@ -20,6 +20,12 @@ export const getPostsSortedByDate = () => {
   return POSTS.map(postFromModule).sort((a, b) => (a.date > b.date ? -1 : 1));
 };
 
+export const getFilteredPosts = (query: string) => {
+  return POSTS.map(postFromModule).filter((post) =>
+    post.title.toLowerCase().includes(query.toLowerCase())
+  );
+};
+
 function postFromModule(mod: { attributes: Frontmatter; filename: string }) {
   return {
     ...mod.attributes,
