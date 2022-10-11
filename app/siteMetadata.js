@@ -13,5 +13,6 @@ export const siteMetadata = {
   professionalTitle: "Software Engineer @ Shopify",
   aboutMe:
     "I'm a Software Engineer @ Shopify. More than 5 years of experience developing software. International working experience, mainly in the Swiss and Spanish banking sector. Full-Stack knowledge with a focus on web development. Interested in new technologies and cybersecurity.",
-  logo: "https://user-images.githubusercontent.com/89982193/189909779-fc246b9e-1ff8-46d8-9c57-8c51d1676d77.png"
+  logo: "/images/logo.webp",
+  logo_dark_mode: "/images/logo_dark.webp",
 };
