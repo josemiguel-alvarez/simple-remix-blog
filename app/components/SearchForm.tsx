@@ -2,11 +2,7 @@ import { Input } from "@mui/material";
 import { Form, useSubmit } from "@remix-run/react";
 import { FormEvent, useState } from "react";
 
-interface Props {
-  query?: string;
-}
-
-export const SearchForm = ({ query }: Props) => {
+export const SearchForm = () => {
   const [inputQuery, setInputQuery] = useState("");
   const submit = useSubmit();
 

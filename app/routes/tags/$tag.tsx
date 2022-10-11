@@ -7,8 +7,6 @@ import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
 import { siteMetadata } from "~/siteMetadata";
 import { SearchForm } from "~/components/SearchForm";
-import { useSearchQuery } from "~/hooks/useSearchQuery";
-import { useState } from "react";
 
 interface Params {
   tag: string;
