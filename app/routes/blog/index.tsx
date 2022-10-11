@@ -12,6 +12,7 @@ interface LoaderData {
   nextPage: number | null;
   previousPage: number | null;
   totalPages: number;
+  query: string | null;
 }
 
 export const loader = async ({ request }: { request: Request }) => {
@@ -26,18 +27,18 @@ export const loader = async ({ request }: { request: Request }) => {
   }
   const data = getPagingData(request, posts);
 
-  return json<LoaderData>(data);
+  return json<LoaderData>({ ...data, query });
 };
 
 export default function Blog() {
-  const { page, posts, nextPage, previousPage, totalPages } =
+  const { page, posts, nextPage, previousPage, totalPages, query } =
     useLoaderData<LoaderData>();
 
   return (
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>All posts</h1>
-        <SearchForm />
+        <SearchForm query={query} />
       </div>
       <PostsList
         posts={posts}

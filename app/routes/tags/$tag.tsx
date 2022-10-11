@@ -18,6 +18,7 @@ interface LoaderData {
   previousPage: number | null;
   totalPages: number;
   page: number;
+  query: string | null;
 }
 
 export const meta: MetaFunction = ({ params }) => {
@@ -54,19 +55,19 @@ export const loader = async ({
   }
   const data = getPagingData(request, posts);
 
-  return json<LoaderData>(data);
+  return json<LoaderData>({ ...data, query });
 };
 
 export default function Tag() {
   const { tag } = useParams();
-  const { posts, nextPage, previousPage, totalPages, page } =
+  const { posts, nextPage, previousPage, totalPages, page, query } =
     useLoaderData<LoaderData>();
 
   return (
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>#{tag}</h1>
-        <SearchForm />
+        <SearchForm query={query} />
       </div>
       <PostsList
         posts={posts}

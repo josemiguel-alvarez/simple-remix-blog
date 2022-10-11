@@ -1,8 +1,8 @@
 import { Input } from "@mui/material";
-import { Form, useSubmit } from "@remix-run/react";
+import { useSubmit } from "@remix-run/react";
 import { FormEvent, useState } from "react";
 
-export const SearchForm = () => {
+export const SearchForm = ({ query }: { query: string | null }) => {
   const [inputQuery, setInputQuery] = useState("");
   const submit = useSubmit();
 
@@ -11,7 +11,7 @@ export const SearchForm = () => {
   };
 
   return (
-    <Form className="mb-10" method="get" onChange={handleFormChange}>
+    <form className="mb-10" method="get" onChange={handleFormChange}>
       <Input
         name="q"
         disableUnderline={true}
@@ -22,8 +22,8 @@ export const SearchForm = () => {
         }}
         placeholder="Search"
         onChange={(e) => setInputQuery(e.target.value)}
-        value={inputQuery}
+        value={inputQuery ? inputQuery : query ?? ""}
       />
-    </Form>
+    </form>
   );
 };
