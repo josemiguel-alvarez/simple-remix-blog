@@ -13,6 +13,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { siteMetadata } from "./siteMetadata";
 import styles from "./tailwind.css";
+import { isDarkMode } from "./utils/darkMode";
 
 export const links: LinksFunction = () => {
   return [
@@ -49,11 +50,7 @@ export const meta: MetaFunction = ({ location }) => ({
 
 export default function App() {
   useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+    if (isDarkMode()) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
