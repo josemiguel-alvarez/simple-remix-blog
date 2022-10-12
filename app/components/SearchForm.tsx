@@ -7,7 +7,7 @@ export const SearchForm = ({ query }: { query: string | null }) => {
   const submit = useSubmit();
 
   const handleFormChange = (e: FormEvent<HTMLFormElement>) => {
-    submit(e.currentTarget, { replace: true, action: "/blog", method: "get" });
+    submit(e.currentTarget, { replace: true, method: "get" });
   };
 
   return (
