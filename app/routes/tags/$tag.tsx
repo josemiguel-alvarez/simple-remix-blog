@@ -67,7 +67,7 @@ export default function Tag() {
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>#{tag}</h1>
-        <SearchForm query={query} />
+        <SearchForm query={query} postPage={`tags/${tag}`} />
       </div>
       <PostsList
         posts={posts}

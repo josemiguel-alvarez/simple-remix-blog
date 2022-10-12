@@ -38,7 +38,7 @@ export default function Blog() {
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>All posts</h1>
-        <SearchForm query={query} />
+        <SearchForm query={query} postPage={"blog"} />
       </div>
       <PostsList
         posts={posts}
