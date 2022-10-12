@@ -7,11 +7,11 @@ export const SearchForm = ({ query }: { query: string | null }) => {
   const submit = useSubmit();
 
   const handleFormChange = (e: FormEvent<HTMLFormElement>) => {
-    submit(e.currentTarget, { replace: true });
+    submit(e.currentTarget, { replace: true, action: "/blog", method: "get" });
   };
 
   return (
-    <form className="mb-10" method="get" onChange={handleFormChange}>
+    <form className="mb-10" onChange={handleFormChange}>
       <Input
         name="q"
         disableUnderline={true}
