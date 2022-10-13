@@ -1,11 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, useParams } from "@remix-run/react";
-import type { Frontmatter } from "~/utils/posts.server";
+import { Frontmatter, getFilteredPosts } from "~/utils/posts.server";
 import { getPostsSortedByDate } from "~/utils/posts.server";
 import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
 import { siteMetadata } from "~/siteMetadata";
+import { SearchForm } from "~/components/SearchForm";
 
 interface Params {
   tag: string;
@@ -17,6 +18,7 @@ interface LoaderData {
   previousPage: number | null;
   totalPages: number;
   page: number;
+  query: string | null;
 }
 
 export const meta: MetaFunction = ({ params }) => {
@@ -42,22 +44,31 @@ export const loader = async ({
   request: Request;
 }) => {
   const { tag } = params;
-  const posts = getPostsSortedByDate().filter((post) =>
-    post.tags.includes(tag)
-  );
+  const url = new URL(request.url);
+  const query = url.searchParams.get("q");
+
+  let posts;
+  if (query && query.length >= 3) {
+    posts = getFilteredPosts(query).filter((post) => post.tags.includes(tag));
+  } else {
+    posts = getPostsSortedByDate().filter((post) => post.tags.includes(tag));
+  }
   const data = getPagingData(request, posts);
 
-  return json<LoaderData>(data);
+  return json<LoaderData>({ ...data, query });
 };
 
 export default function Tag() {
   const { tag } = useParams();
-  const { posts, nextPage, previousPage, totalPages, page } =
+  const { posts, nextPage, previousPage, totalPages, page, query } =
     useLoaderData<LoaderData>();
 
   return (
     <div className="w-full">
-      <h1>#{tag}</h1>
+      <div className="md:flex md:justify-between md:items-center">
+        <h1>#{tag}</h1>
+        <SearchForm query={query} postPage={`tags/${tag}`} />
+      </div>
       <PostsList
         posts={posts}
         page={page}
