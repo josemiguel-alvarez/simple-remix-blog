@@ -1,20 +1,32 @@
 import { Input } from "@mui/material";
-import { useSubmit, Form } from "@remix-run/react";
-import { FormEvent, useState } from "react";
+import { useSubmit, Form, useLocation } from "@remix-run/react";
+import type { FormEvent } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
-export const SearchForm = ({
-  query,
-  postPage,
-}: {
+interface Props {
   query: string | null;
-  postPage: string;
-}) => {
-  const [inputQuery, setInputQuery] = useState("");
+}
+
+let timeoutId: NodeJS.Timeout;
+
+export const SearchForm = ({ query }: Props) => {
   const submit = useSubmit();
+  const location = useLocation();
+  const [inputQuery, setInputQuery] = useState(query || "");
 
   const handleFormChange = (e: FormEvent<HTMLFormElement>) => {
-    submit(e.currentTarget, { replace: true, action: `/${postPage}` });
+    if (timeoutId) clearTimeout(timeoutId);
+
+    const form = e.currentTarget;
+    timeoutId = setTimeout(() => {
+      submit(form, { replace: true, action: location.pathname });
+    }, 300);
   };
+
+  useEffect(() => {
+    setInputQuery(query || "");
+  }, [query]);
 
   return (
     <Form className="mb-10" onChange={handleFormChange}>
@@ -28,7 +40,7 @@ export const SearchForm = ({
         }}
         placeholder="Search"
         onChange={(e) => setInputQuery(e.target.value)}
-        value={inputQuery ? inputQuery : query ?? ""}
+        value={inputQuery}
       />
     </Form>
   );

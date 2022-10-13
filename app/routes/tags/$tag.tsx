@@ -1,7 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, useParams } from "@remix-run/react";
-import { Frontmatter, getFilteredPosts } from "~/utils/posts.server";
+import type { Frontmatter } from "~/utils/posts.server";
+import { filterPostsByTitle } from "~/utils/posts.server";
 import { getPostsSortedByDate } from "~/utils/posts.server";
 import { PostsList } from "~/components/PostsList";
 import { getPagingData } from "~/utils/paging.server";
@@ -47,13 +48,9 @@ export const loader = async ({
   const url = new URL(request.url);
   const query = url.searchParams.get("q");
 
-  let posts;
-  if (query && query.length >= 3) {
-    posts = getFilteredPosts(query).filter((post) => post.tags.includes(tag));
-  } else {
-    posts = getPostsSortedByDate().filter((post) => post.tags.includes(tag));
-  }
-  const data = getPagingData(request, posts);
+  const posts = query ? filterPostsByTitle(query) : getPostsSortedByDate();
+  const filteredPosts = posts.filter((post) => post.tags.includes(tag));
+  const data = getPagingData(request, filteredPosts);
 
   return json<LoaderData>({ ...data, query });
 };
@@ -67,7 +64,7 @@ export default function Tag() {
     <div className="w-full">
       <div className="md:flex md:justify-between md:items-center">
         <h1>#{tag}</h1>
-        <SearchForm query={query} postPage={`tags/${tag}`} />
+        <SearchForm query={query} />
       </div>
       <PostsList
         posts={posts}
