@@ -36,7 +36,7 @@ export const SearchForm = ({ query }: Props) => {
         classes={{
           root: "md:w-72 w-full",
           input:
-            "border border-gray-400 dark:text-slate-200 dark:border-slate-200 px-5 py-3 border-solid rounded-md block ease-in duration-300 dark:focus:border-blue-400 focus:border-blue-400",
+            "border border-gray-400 dark:text-gray-700 dark:bg-gray-100 px-5 py-3 border-solid rounded-md block ease-in duration-300 dark:focus:border-blue-400 focus:border-blue-400",
         }}
         placeholder="Search"
         onChange={(e) => setInputQuery(e.target.value)}
