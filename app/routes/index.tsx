@@ -41,8 +41,10 @@ export default function Index() {
       <div className="mt-16">
         <div className="not-prose sm:flex flex-wrap">
           {posts.map((post, index) => (
-            <div key={post.slug} className="sm:w-1/2 mb-4">
-              <Card {...post} index={index} />
+            <div key={post.slug} className="sm:w-1/2 mb-12">
+              <div className={index % 2 === 0 ? "sm:mr-6" : "sm:ml-6"}>
+                <Card {...post} />
+              </div>
             </div>
           ))}
         </div>
