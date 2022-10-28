@@ -22,7 +22,10 @@ export const Header = () => {
 
   return (
     <header className="flex justify-between items-center max-w-full w-full py-8 gap-x-12 md:gap-x-0">
-      <Link className="home text-3xl font-medium no-underline flex-1" to="/">
+      <Link
+        className="home text-3xl font-medium no-underline flex-1 m-0 not-prose md:my-4"
+        to="/"
+      >
         {siteLogo ? (
           <img alt="Project logo" src={siteLogo} loading="lazy" />
         ) : (
