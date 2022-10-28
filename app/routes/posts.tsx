@@ -71,7 +71,7 @@ export default function Posts() {
   const postImage = `${siteMetadata.url}${image}`;
 
   const maxWidthClasses =
-    "prose-pre:max-w-[80vw] md:prose-pre:max-w-2xl lg:prose-pre:max-w-3xl xl:prose-pre:max-w-5xl";
+    "prose-pre:max-w-[90vw] md:prose-pre:max-w-2xl lg:prose-pre:max-w-3xl xl:prose-pre:max-w-5xl";
   const textClasses = "prose-a:text-blue-700 dark:prose-a:text-emerald-400";
 
   const publishedAt = new Date(date).toISOString();
