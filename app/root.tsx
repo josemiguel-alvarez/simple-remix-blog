@@ -59,7 +59,7 @@ export default function App() {
 
   const flexClasses = "flex flex-col items-center";
   const spacingClasses =
-    "px-8 md:px-0 md:max-w-2xl lg:max-w-3xl xl:max-w-5xl mx-auto h-[100vh]";
+    "px-4 md:px-0 md:max-w-2xl lg:max-w-3xl xl:max-w-5xl mx-auto h-[100vh]";
   const proseClasses = "prose lg:prose-xl dark:prose-invert";
 
   return (
