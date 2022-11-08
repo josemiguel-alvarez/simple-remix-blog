@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders correctly 1`] = `
+<div>
+  <div
+    class="not-prose"
+  >
+    <a
+      class="no-underline relative inline-block text-sm font-medium text-blue-700 group"
+      href="/http://example.com"
+    >
+      <span
+        class="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-blue-700 group-hover:translate-y-0 group-hover:translate-x-0"
+      />
+      <span
+        class="relative block px-4 py-2 bg-white border border-current"
+      >
+        Test Badge
+      </span>
+    </a>
+  </div>
+</div>
+`;
