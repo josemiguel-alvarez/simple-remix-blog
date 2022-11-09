@@ -6,7 +6,7 @@ import { Badge } from "./Badge";
 import { siteMetadata } from "~/siteMetadata";
 
 interface Props {
-  attributes: Frontmatter;
+  attributes: Pick<Frontmatter, "title" | "date" | "tags">;
 }
 
 export const PostHeader = ({ attributes }: Props) => {

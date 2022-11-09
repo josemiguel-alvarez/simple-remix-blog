@@ -2,9 +2,11 @@ import type { Frontmatter } from "~/utils/posts.server";
 import { Card } from "./Card";
 import { InternalLink } from "./InternalLink";
 
+type Post = Pick<Frontmatter, "formattedDate" | "slug" | "summary" | "title">;
+
 interface Props {
   page: number;
-  posts: Frontmatter[];
+  posts: Post[];
   nextPage: number | null;
   previousPage: number | null;
   totalPages: number;
