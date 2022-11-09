@@ -27,7 +27,7 @@ export const Header = () => {
         to="/"
       >
         {siteLogo ? (
-          <img alt="Project logo" src={siteLogo} loading="lazy" />
+          <img alt="Website logo" src={siteLogo} loading="lazy" />
         ) : (
           <span>{siteMetadata.domain}</span>
         )}

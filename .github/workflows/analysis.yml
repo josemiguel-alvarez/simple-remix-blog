@@ -13,3 +13,11 @@ jobs:
         run: yarn lint
       - name: Run TypeScript analysis
         run: yarn typecheck
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: yarn
+      - name: Run unit tests
+        run: yarn test
