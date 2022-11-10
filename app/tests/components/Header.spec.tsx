@@ -46,14 +46,6 @@ describe("Header", () => {
     siteMetadata.logo_dark_mode = originalSiteMetadata.logo_dark_mode;
   });
 
-  test("renders social media links", () => {
-    renderComponent();
-
-    expect(screen.getByAltText("GitHub profile")).toBeDefined();
-    expect(screen.getByAltText("Twitter profile")).toBeDefined();
-    expect(screen.getByAltText("LinkedIn profile")).toBeDefined();
-  });
-
   test("renders blog links", () => {
     renderComponent();
 

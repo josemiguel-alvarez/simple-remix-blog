@@ -33,10 +33,6 @@ export const Header = () => {
         )}
       </Link>
 
-      <div className="hidden sm:block flex-1">
-        <SocialMedia />
-      </div>
-
       <div className="sm:flex items-center gap-4 hidden flex-1 justify-end">
         <BlogLinks />
       </div>
@@ -58,11 +54,7 @@ export const Header = () => {
         onClose={closeDrawer}
         onClick={closeDrawer}
       >
-        <div className="flex flex-col pr-8 pl-4 pt-8 gap-4 dark:bg-slate-900 h-full">
-          <div className="flex gap-4">
-            <SocialMedia />
-          </div>
-
+        <div className="flex flex-col pr-8 pl-4 pt-8 gap-4 dark:bg-slate-900 h-full min-w-[125px]">
           <BlogLinks />
         </div>
       </Drawer>
