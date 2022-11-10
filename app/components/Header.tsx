@@ -5,7 +5,6 @@ import { siteMetadata } from "~/siteMetadata";
 import { isDarkMode } from "~/utils/darkMode";
 import menuIcon from "../assets/menu.webp";
 import { BlogLinks } from "./BlogLinks";
-import { SocialMedia } from "./SocialMedia";
 
 export const Header = () => {
   const [shouldShowDrawer, setShouldShowDrawer] = useState(false);
