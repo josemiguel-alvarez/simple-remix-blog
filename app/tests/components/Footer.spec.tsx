@@ -11,4 +11,12 @@ describe("Footer", () => {
     expect(new Date().getFullYear()).toBeDefined();
     expect(siteMetadata.domain).toBeDefined();
   });
+
+  test("renders social media links", () => {
+    render(<Footer />, { wrapper: BrowserRouter });
+
+    expect(screen.getByAltText("GitHub profile")).toBeDefined();
+    expect(screen.getByAltText("Twitter profile")).toBeDefined();
+    expect(screen.getByAltText("LinkedIn profile")).toBeDefined();
+  });
 });
