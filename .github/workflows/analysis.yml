@@ -1,8 +1,7 @@
 name: Quality Check
 on: [push]
 jobs:
-  lint:
-    name: Lint
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,21 +12,19 @@ jobs:
           node-version: "16"
           cache: "yarn"
       - run: yarn install --frozen-lockfile
+  lint:
+    needs: setup
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
       - name: Run eslint
         run: yarn lint
       - name: Run TypeScript analysis
         run: yarn typecheck
   test:
+    needs: setup
     name: Unit tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: "yarn"
-      - run: yarn install --frozen-lockfile
       - name: Run unit tests
         run: yarn test
