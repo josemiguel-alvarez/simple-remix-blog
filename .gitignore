@@ -13,3 +13,6 @@ node_modules
 /app/tailwind.css
 
 .DS_Store
+/test-results/
+/playwright-report/
+/playwright/.cache/

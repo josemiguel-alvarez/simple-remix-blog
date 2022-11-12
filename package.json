@@ -9,7 +9,8 @@
     "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
     "lint": "eslint .",
     "typecheck": "tsc -b",
-    "test": "jest --config jest.config.ts"
+    "test": "jest --config jest.config.ts",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "^1.0.2",
@@ -30,6 +31,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@playwright/test": "^1.27.1",
     "@remix-run/dev": "^1.7.0",
     "@remix-run/eslint-config": "^1.7.0",
     "@remix-run/serve": "^1.7.0",
