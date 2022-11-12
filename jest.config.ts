@@ -1,5 +1,5 @@
 export default {
-  testRegex: "((\\.|/*.)(spec))\\.tsx?$",
+  testRegex: "app/tests/(.*)((\\.|/*.)(spec))\\.tsx?$",
   moduleDirectories: ["node_modules"],
   moduleNameMapper: {
     "~/(.*)": "<rootDir>/app/$1",
